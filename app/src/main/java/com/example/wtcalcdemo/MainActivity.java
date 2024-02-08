@@ -72,11 +72,13 @@ public class MainActivity extends AppCompatActivity {
                         else if (WeightValues > 500 && radGroupBtnid == R.id.radBtnKgsToLbs)
                             Toast.makeText(MainActivity.this, "input weight in pounds must be <= 500", Toast.LENGTH_SHORT).show();
                         //Otherwise compute outputWtInKilos = inputWt/2.2
-                                double ConvertedLbstoKGgs = WeightValues/2.2;
-                                Toast.makeText(MainActivity.this,"The Result is " + ConvertedLbstoKGgs,Toast.LENGTH_SHORT).show();
+                        else if (WeightValues < 500 && radGroupBtnid == R.id.radBtnLbsToKgs){
+                            double ConvertedLbstoKGgs = WeightValues/2.2;
+                                Toast.makeText(MainActivity.this,"The Result is " + ConvertedLbstoKGgs,Toast.LENGTH_SHORT).show();}
                         //Otherwise compute outputWtInPounds = inputWt*2.2
-                                double ConvertedKgstoLbs = WeightValues*2.2;
-                        Toast.makeText(MainActivity.this,"The Result is " + ConvertedKgstoLbs,Toast.LENGTH_SHORT).show();
+                         else if (WeightValues < 1000 && radGroupBtnid == R.id.radBtnKgsToLbs) {
+                             double ConvertedKgstoLbs = WeightValues*2.2;
+                        Toast.makeText(MainActivity.this,"The Result is " + ConvertedKgstoLbs,Toast.LENGTH_SHORT).show();}
                     } catch (Exception ex) {
                         ex.printStackTrace();
                         Toast.makeText(MainActivity.this,
