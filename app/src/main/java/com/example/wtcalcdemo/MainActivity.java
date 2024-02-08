@@ -47,28 +47,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         // radGroupConv.getCheckedRadioButtonId() --> -1 if nothing is onContextItemSelected()
-        int radGroupBtnid = radGroupConv.getCheckedRadioButtonId();
-        if(radGroupBtnid ==-1)
-        {
-            Toast.makeText(MainActivity.this,"It is not selected for the Converted",
-                    Toast.LENGTH_SHORT).show();
-        }else{
             // --> R.id.radBtnLbsToKgs if that radio button is checked
-            if(radGroupBtnid == R.id.radBtnLbsToKgs){
-                Toast.makeText(MainActivity.this,"Start to Change the values from Lbs to Kgs",
-                        Toast.LENGTH_SHORT).show();
-            }
             // --> R.id.radBtnKgsToLbs if the other radio button is checked
-            else if (radGroupBtnid == R.id.radBtnKgsToLbs) {
-                Toast.makeText(MainActivity.this,"Start to Convert the values from Kgs to Lbs",
-                        Toast.LENGTH_SHORT).show();
-            }
-        };
         //In that listener, do the following:
         //First, set up a button click listener for btnConvertWt
         btnConvertWt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int radGroupBtnid = radGroupConv.getCheckedRadioButtonId();
                 //Display an error message if no radio button is checked (id is -1)
                 if (radGroupBtnid == -1) {
                     Toast.makeText(MainActivity.this, "Please select the direction to change", Toast.LENGTH_SHORT).show();
