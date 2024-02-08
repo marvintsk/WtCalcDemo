@@ -15,8 +15,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     TextView txtViewResults;
-    //updated another line from local Feb 8
-
+    //updated another line from local
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
